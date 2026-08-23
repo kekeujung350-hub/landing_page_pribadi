@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Landing Page Portofolio & CV Online Keke Ysalsabila Ujung - Mahasiswi Ilmu Komputer UNIMED">
+    
+    <!-- Bonus Points: Open Graph Meta Tags -->
+    <meta property="og:title" content="Portofolio & CV Online - Keke Ysalsabila Ujung">
+    <meta property="og:description" content="Halaman resmi Portofolio dan Resume Keke Ysalsabila Ujung.">
+    <meta property="og:type" content="website">
+
+    <title>Portofolio & CV - Keke Ysalsabila Ujung</title>
+
+    <style>
+        :root {
+            --sidebar-bg: #1e293b;
+            --sidebar-text: #f8fafc;
+            --sidebar-accent: #38bdf8;
+            --paper-bg: #ffffff;
+            --body-bg: #e2e8f0;
+            --text-dark: #334155;
+            --primary: #0284c7;
+            --primary-hover: #0369a1;
+            --border-color: #cbd5e1;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--body-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 30px 15px;
+        }
+
+        /* CONTAINER UTAMA MENYERUPAI LEMBARAN KERTAS CV */
+        .cv-paper {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--paper-bg);
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* NAVIGASI ATAS ELEGAN */
+        header nav {
+            background: #0f172a;
+            padding: 15px;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header nav a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        header nav a:hover {
+            color: var(--sidebar-accent);
+        }
+
+        /* LAYOUT 2 KOLOM (Dua Lembar / Split CV) */
+        .cv-grid {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+        }
+
+        /* KOLOM KIRI (SIDEBAR - INFORMASI & SKILLS) */
+        .cv-sidebar {
+            background-color: var(--sidebar-bg);
+            color: var(--sidebar-text);
+            padding: 30px 25px;
+        }
+
+        .profile-container {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        .profile-container img {
+            width: 150px;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 3px solid var(--sidebar-accent);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            margin-bottom: 10px;
+        }
+
+        .profile-container figcaption {
+            font-size: 0.8rem;
+            color: #94a3b8;
+        }
+
+        .cv-sidebar h2 {
+            color: var(--sidebar-accent);
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 5px;
+            margin: 25px 0 12px 0;
+        }
+
+        .cv-sidebar p, .cv-sidebar li {
+            font-size: 0.9rem;
+            color: #cbd5e1;
+            margin-bottom: 8px;
+        }
+
+        .cv-sidebar ul {
+            padding-left: 18px;
+        }
+
+        /* KOLOM KANAN (KONTEN UTAMA CV) */
+        .cv-main {
+            padding: 35px 30px;
+        }
+
+        .main-header {
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+        }
+
+        .main-header h1 {
+            font-size: 2.2rem;
+            color: #0f172a;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .main-header .title {
+            font-size: 1.1rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        .cv-main section {
+            margin-bottom: 25px;
+        }
+
+        .cv-main h2 {
+            font-size: 1.2rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 4px;
+            margin-bottom: 15px;
+        }
+
+        article {
+            margin-bottom: 15px;
+        }
+
+        article h3 {
+            font-size: 1.05rem;
+            color: #0f172a;
+        }
+
+        .time-badge {
+            font-size: 0.85rem;
+            color: #64748b;
+            font-style: italic;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* FORMULIR KONTAK */
+        form div {
+            margin-bottom: 12px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 4px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"],
+        textarea {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 0.9rem;
+        }
+
+        input[type="color"] {
+            height: 35px;
+            width: 50px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button[type="submit"] {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: var(--primary-hover);
+        }
+
+        .btn-download {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-download:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* ASIDE INFORMASI TAMBAHAN */
+        aside {
+            background-color: #f1f5f9;
+            border-left: 4px solid var(--primary);
+            padding: 12px 15px;
+            margin-top: 20px;
+            border-radius: 4px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 15px;
+            font-size: 0.85rem;
+        }
+
+        /* RESPONSIVE UNTUK TAMPILAN HP */
+        @media (max-width: 768px) {
+            .cv-grid {
+                grid-template-columns: 1fr;
+            }
+            .cv-main {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CONTAINER UTAMA BENTUK LEMBARAN KERTAS -->
+    <div class="cv-paper">
+
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#objektif">Objektif</a></li>
+                    <li><a href="#pendidikan">Pendidikan</a></li>
+                    <li><a href="#pengalaman">Pengalaman</a></li>
+                    <li><a href="#proyek">Proyek Web</a></li>
+                    <li><a href="#cv-file">Unduh CV</a></li>
+                    <li><a href="#kontak">Kontak</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <div class="cv-grid">
+
+            <!-- LEMBAR 1: KOLOM KIRI (SIDEBAR / INFORMASI & KETERAMPILAN) -->
+            <div class="cv-sidebar">
+                
+                <div class="profile-container">
+                    <figure>
+                        <img src="foto.jpg" alt="Foto Resmi Keke Ysalsabila Ujung">
+                        <figcaption>Keke Ysalsabila Ujung</figcaption>
+                    </figure>
+                </div>
+
+                <h2>Kontak & Informasi</h2>
+                <p><strong>Email:</strong> kekeujung350@gmail.com</p>
+                <p><strong>Telepon:</strong> 0895-3105-0233</p>
+                <p><strong>Alamat:</strong> Sidorejo Hilir, Kec. Medan Tembung, Kota Medan, Sumatera Utara</p>
+                
+                <h2>Informasi Pribadi</h2>
+                <p><strong>Tanggal Lahir:</strong> <time datetime="2006-11-11">11 November 2006</time></p>
+                <p><strong>Kebangsaan:</strong> Indonesia</p>
+                <p><strong>Jenis Kelamin:</strong> Perempuan</p>
+                <p><strong>Status:</strong> Belum Menikah</p>
+
+                <h2>Keterampilan</h2>
+                <ul>
+                    <li>Mampu bertanggung jawab atas amanah & tugas[cite: 1]</li>
+                    <li>Mampu bekerja sama & berkolaborasi dalam tim[cite: 1]</li>
+                    <li>Komunikatif & mudah diajak bekerja sama[cite: 1]</li>
+                    <li>Mampu menyelesaikan masalah organisasi[cite: 1]</li>
+                    <li>Disiplin di lingkungan sosial-keagamaan[cite: 1]</li>
+                    <li>Dasar tilawah, pidato, & syarhil Qur'an[cite: 1]</li>
+                </ul>
+
+                <h2>Technical Skills</h2>
+                <ul>
+                    <li>HTML5 & CSS3</li>
+                    <li>Java</li>
+                    <li>SQL / Database</li>
+                </ul>
+
+                <h2>Prestasi</h2>
+                <ul>
+                    <li>Juara Lomba Tilawah Al-Qur'an[cite: 1]</li>
+                    <li>Juara Lomba Pidato[cite: 1]</li>
+                    <li>Juara Lomba Syarhil Qur'an[cite: 1]</li>
+                </ul>
+
+                <h2>Minat</h2>
+                <ul>
+                    <li>Menggambar[cite: 1]</li>
+                    <li>Menyanyi[cite: 1]</li>
+                    <li>Mengajar anak-anak jalanan[cite: 1]</li>
+                </ul>
+
+            </div>
+
+            <!-- LEMBAR 2: KOLOM KANAN (KONTEN UTAMA) -->
+            <div class="cv-main">
+
+                <div class="main-header">
+                    <h1>Keke Y. SALSABILA UJUNG</h1>
+                    <div class="title">Mahasiswi Ilmu Komputer — Universitas Negeri Medan</div>
+                </div>
+
+                <main>
+
+                    <!-- OBJEKTIF / TENTANG SAYA -->
+                    <section id="objektif">
+                        <h2>Objektif & Profile</h2>
+                        <p>Mahasiswi yang berkomitmen untuk terus mengembangkan diri secara profesional, dengan sikap tanggung jawab tinggi, kemampuan bekerja sama dalam tim, pengalaman berorganisasi di bidang keagamaan, serta semangat untuk berkontribusi secara positif dalam setiap kegiatan maupun lingkungan kerja yang dijalani[cite: 1].</p>
+                        <br>
+                        <p>Saat ini saya sedang memperdalam kemampuan di bidang ilmu komputer meliputi pembuatan website, pemrograman, dan pengelolaan database serta terus meningkatkan soft skills untuk bekal di dunia kerja IT.</p>
+                    </section>
+
+                    <!-- PENDIDIKAN -->
+                    <section id="pendidikan">
+                        <h2>Riwayat Pendidikan</h2>
+                        <article>
+                            <h3>Universitas Negeri Medan</h3>
+                            <span class="time-badge"><time datetime="2025">2025</time> – Sekarang (Semester 3)[cite: 1]</span>
+                            <p>Program Studi Ilmu Komputer. Mempelajari dasar pemrograman, database, algoritma, matematika, hingga pengembangan aplikasi.</p>
+                        </article>
+                        <article>
+                            <h3>MA Al-Washliyah Gedung Johor, Medan</h3>
+                            <span class="time-badge"><time datetime="2022">2022</time> – <time datetime="2025">2025</time>[cite: 1]</span>
+                        </article>
+                        <article>
+                            <h3>SMP Negeri 1 Berampu</h3>
+                            <span class="time-badge"><time datetime="2019">2019</time> – <time datetime="2021">2021</time>[cite: 1]</span>
+                        </article>
+                        <article>
+                            <h3>SD Negeri Pasi</h3>
+                            <span class="time-badge"><time datetime="2013">2013</time> – <time datetime="2019">2019</time>[cite: 1]</span>
+                        </article>
+                    </section>
+
+                    <!-- PENGALAMAN ORGANISASI -->
+                    <section id="pengalaman">
+                        <h2>Pengalaman Organisasi & Pelatihan</h2>
+                        <article>
+                            <h3>Anggota OSIM - Bidang Keagamaan</h3>
+                            <span class="time-badge"><time datetime="2023">2023</time> – <time datetime="2025">2025</time>[cite: 1]</span>
+                            <p>Bertanggung jawab atas pelaksanaan program kerja bidang keagamaan di sekolah, merencanakan kegiatan, serta melatih kedisiplinan berorganisasi[cite: 1].</p>
+                        </article>
+                        <article>
+                            <h3>Anggota Remaja Masjid</h3>
+                            <span class="time-badge"><time datetime="2022">2022</time> – <time datetime="2025">2025</time>[cite: 1]</span>
+                            <p>Membantu perencanaan kegiatan keagamaan masjid dan menyelesaikan berbagai kendala selama kegiatan berlangsung[cite: 1].</p>
+                        </article>
+                        <article>
+                            <h3>Anggota Nasyid Remaja Islam Johor</h3>
+                            <span class="time-badge"><time datetime="2022">2022</time> – <time datetime="2024">2024</time>[cite: 1]</span>
+                            <p>Berpartisipasi dalam latihan dan penampilan nasyid pada berbagai acara keagamaan[cite: 1].</p>
+                        </article>
+                        <article>
+                            <h3>Pelatihan / Kursus</h3>
+                            <p><strong>Les Privat Tilawatil Qur'an:</strong> Memperdalam kemampuan membaca Al-Qur'an sesuai kaidah tilawah[cite: 1].</p>
+                        </article>
+                    </section>
+
+                    <!-- PROYEK AKADEMIK -->
+                    <section id="proyek">
+                        <h2>Proyek Pengembangan Web</h2>
+                        <article>
+                            <h3>Website Optimasi Geometri & Kalkulus Diferensial</h3>
+                            <p>Mengembangkan konsep website untuk menentukan perancangan dimensi kemasan produk yang efisien bahan. Proyek ini memadukan konsep matematika, algoritma, dan teknologi pemrograman web.</p>
+                        </article>
+                    </section>
+
+                    <!-- BERKAS CV -->
+                    <section id="cv-file">
+                        <h2>Unduh Berkas CV</h2>
+                        <p>Dapatkan salinan resume lengkap dalam format PDF:</p>
+                        <br>
+                        <a href="cv.pdf" class="btn-download" download>Unduh CV (PDF)</a>
+                    </section>
+
+                    <!-- KONTAK & FORMULIR INTERAKTIF -->
+                    <section id="kontak">
+                        <h2>Hubungi Saya</h2>
+                        <form action="#" method="POST">
+                            <div>
+                                <label for="nama">Nama Lengkap:</label>
+                                <input type="text" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
+                            </div>
+
+                            <div>
+                                <label for="email">Email:</label>
+                                <input type="email" id="email" name="email" placeholder="nama@email.com" required>
+                            </div>
+
+                            <!-- Input Type Khusus (Bonus Points) -->
+                            <div>
+                                <label for="tanggal">Tanggal Pesan:</label>
+                                <input type="date" id="tanggal" name="tanggal">
+                            </div>
+
+                            <div>
+                                <label for="warna">Warna Favorit:</label>
+                                <input type="color" id="warna" name="warna" value="#0284c7">
+                            </div>
+
+                            <div>
+                                <label for="kepuasan">Tingkat Kepuasan Tampilan Web (1-100):</label>
+                                <input type="range" id="kepuasan" name="kepuasan" min="1" max="100">
+                            </div>
+
+                            <div>
+                                <label for="pesan">Pesan / Tanggapan:</label>
+                                <textarea id="pesan" name="pesan" rows="3" placeholder="Tuliskan pesan Anda..." required></textarea>
+                            </div>
+
+                            <button type="submit">Kirim Pesan</button>
+                        </form>
+                    </section>
+
+                    <!-- ASIDE / INFORMASI TAMBAHAN -->
+                    <aside>
+                        <h3>Status Kolaborasi</h3>
+                        <p><small>Terbuka untuk peluang kolaborasi proyek akademik, pembuatan website, serta kegiatan organisasi sosial-keagamaan.</small></p>
+                    </aside>
+
+                </main>
+
+            </div>
+
+        </div>
+
+        <!-- FOOTER LEMBARAN -->
+        <footer>
+            <p>Terima kasih telah mengunjungi halaman CV & Portofolio saya!</p>
+            <p>&copy; <time datetime="2026">2026</time> Keke Ysalsabila Ujung. Hak Cipta Dilindungi.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>
