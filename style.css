@@ -1,0 +1,264 @@
+:root {
+    --sidebar-bg: #1e293b;
+    --sidebar-text: #f8fafc;
+    --sidebar-accent: #38bdf8;
+    --paper-bg: #ffffff;
+    --body-bg: #e2e8f0;
+    --text-dark: #334155;
+    --primary: #0284c7;
+    --primary-hover: #0369a1;
+    --border-color: #cbd5e1;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: var(--body-bg);
+    color: var(--text-dark);
+    line-height: 1.6;
+    padding: 30px 15px;
+}
+
+/* CONTAINER UTAMA MENYERUPAI LEMBARAN KERTAS CV */
+.cv-paper {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--paper-bg);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAVIGASI ATAS ELEGAN */
+header nav {
+    background: #0f172a;
+    padding: 15px;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+header nav a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+header nav a:hover {
+    color: var(--sidebar-accent);
+}
+
+/* LAYOUT 2 KOLOM (Dua Lembar / Split CV) */
+.cv-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+}
+
+/* KOLOM KIRI (SIDEBAR - INFORMASI & SKILLS) */
+.cv-sidebar {
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    padding: 30px 25px;
+}
+
+.profile-container {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.profile-container img {
+    width: 150px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 3px solid var(--sidebar-accent);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 10px;
+}
+
+.profile-container figcaption {
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+.cv-sidebar h2 {
+    color: var(--sidebar-accent);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #334155;
+    padding-bottom: 5px;
+    margin: 25px 0 12px 0;
+}
+
+.cv-sidebar p, 
+.cv-sidebar li {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    margin-bottom: 8px;
+}
+
+.cv-sidebar ul {
+    padding-left: 18px;
+}
+
+/* KOLOM KANAN (KONTEN UTAMA CV) */
+.cv-main {
+    padding: 35px 30px;
+}
+
+.main-header {
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.main-header h1 {
+    font-size: 2.2rem;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.2;
+}
+
+.main-header .title {
+    font-size: 1.1rem;
+    color: var(--primary);
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+.cv-main section {
+    margin-bottom: 25px;
+}
+
+.cv-main h2 {
+    font-size: 1.2rem;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 4px;
+    margin-bottom: 15px;
+}
+
+article {
+    margin-bottom: 15px;
+}
+
+article h3 {
+    font-size: 1.05rem;
+    color: #0f172a;
+}
+
+.time-badge {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-style: italic;
+    display: block;
+    margin-bottom: 4px;
+}
+
+/* FORMULIR KONTAK */
+form div {
+    margin-bottom: 12px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.9rem;
+}
+
+input[type="color"] {
+    height: 35px;
+    width: 50px;
+    border: none;
+    cursor: pointer;
+}
+
+button[type="submit"] {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-download {
+    display: inline-block;
+    background-color: var(--primary);
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.btn-download:hover {
+    background-color: var(--primary-hover);
+}
+
+/* ASIDE INFORMASI TAMBAHAN */
+aside {
+    background-color: #f1f5f9;
+    border-left: 4px solid var(--primary);
+    padding: 12px 15px;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+
+/* FOOTER */
+footer {
+    background: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.85rem;
+}
+
+/* RESPONSIVE UNTUK TAMPILAN HP */
+@media (max-width: 768px) {
+    .cv-grid {
+        grid-template-columns: 1fr;
+    }
+    .cv-main {
+        padding: 20px;
+    }
+}
